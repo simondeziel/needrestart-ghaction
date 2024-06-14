@@ -31,6 +31,7 @@ jobs:
           echo "deb http://archive.ubuntu.com/ubuntu noble-proposed main" | sudo tee /etc/apt/sources.list
           dpkg -l needrestart
           ls /etc/needrestart/conf.d
+          cat /etc/needrestart/needrestart.conf
           sudo apt update
           sudo apt install -y -t noble-proposed needrestart
           sudo apt reinstall libc6
