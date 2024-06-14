@@ -29,6 +29,7 @@ jobs:
       - name: Run a one-line script
         run: |
           echo "deb http://archive.ubuntu.com/ubuntu noble-proposed main" | sudo tee /etc/apt/sources.list
+          ls /etc/needrestart/conf.d
           sudo apt update
           sudo apt install -y -t noble-proposed needrestart
           sudo apt reinstall libc6
