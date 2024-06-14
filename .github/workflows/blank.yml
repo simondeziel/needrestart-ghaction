@@ -32,6 +32,10 @@ jobs:
           dpkg -l needrestart
           ls /etc/needrestart/conf.d
           cat /etc/needrestart/needrestart.conf
+          cp /etc/needrestart/needrestart.conf /tmp/needrestart.conf.orig
+          # XXX: undo GitHub workaround
+          sudo sed -i '/^\s*qr(^runner-provisioner)\s*=>\s*0,$/d' /etc/needrestart/needrestart.conf
+          diff -Nau /tmp/needrestart.conf.orig /etc/needrestart/needrestart.conf || true
           sudo apt update
           sudo apt install -y -t noble-proposed needrestart
           sudo apt reinstall libc6
