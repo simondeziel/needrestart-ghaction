@@ -28,9 +28,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-        echo deb http://archive.ubuntu.com/ubuntu noble-proposed main >> /etc/apt/sources.list
-        apt update
-        apt install -y -t noble-proposed needrestart
-        apt reinstall libc6
-        sleep 5
-        echo Success
+          echo "deb http://archive.ubuntu.com/ubuntu noble-proposed main" >> /etc/apt/sources.list
+          apt update
+          apt install -y -t noble-proposed needrestart
+          apt reinstall libc6
+          sleep 5
+          echo Success
